@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Provider } from "react-redux";
-import { store } from "./redux/store";
-import { Home } from "./components/Home";
-import { ListElements } from "./components/ListElements";
-import { Tasks } from "./components/Tasks";
+import { store } from "../../redux/store";
+import { Home } from "../Home";
+import { ListElements } from "../ListElements";
+import { Tasks } from "../Tasks";
 
 const App: React.FC = () => {
   return (
