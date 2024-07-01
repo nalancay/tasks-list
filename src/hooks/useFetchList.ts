@@ -12,11 +12,10 @@ interface UseFetchListResult<T> {
 export const useFetchList = <T>({
   fetchDataFunction,
 }: FetchListProps): UseFetchListResult<T> => {
-  const [isLoading, setLoading] = useState(false);
+  const [isLoading, setLoading] = useState<boolean>(true);
   const [entities, setEntities] = useState<T[]>([]);
 
   useEffect(() => {
-    setLoading(true);
     fetchDataFunction()
       .then((res) => {
         setEntities(res);
@@ -26,7 +25,7 @@ export const useFetchList = <T>({
         console.error(error);
         setLoading(false);
       });
-  }, [fetchDataFunction]);
+  }, []);
 
   return { entities, isLoading };
 };
